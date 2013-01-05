@@ -32,6 +32,14 @@ def get_login_and_password_for_role(role)
   end
 end
 
+#TODO: Доработать метод
+Когда %{я отсылаю логин и пароль роли "$role"} do |role|
+  credentials = get_login_and_password_for_role(role)
+  puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
+  
+  @current_user_name = credentials['username']
+end
+
 Когда %{я ввожу логин и пароль роли "$role"} do |role|
   credentials = get_login_and_password_for_role(role)
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"

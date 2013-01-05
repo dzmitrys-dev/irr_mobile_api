@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" name="Логин" skipped="0" tests="1" time="38.695797">
-<testcase classname="Логин" name="Логин обычного пользователя" time="38.695797">
+<testsuite errors="0" failures="5" name="Логин" skipped="0" tests="5" time="13.302828">
+<testcase classname="Логин" name="Логин обычного пользователя" time="0.071844">
+  <failure message="failed Логин обычного пользователя" type="failed">
+    <![CDATA[Сценарий: Логин обычного пользователя
+
+* открыта страница для региона "Россия"
+Когда я вхожу под пользователем с ролью "Обычный пользователь 1"
+То на главной странице отображено имя пользователя
+* на главной странице отображены ссылки для пользователя
+Когда я перехожу на страницу паспорта
+То на странице паспорта отображены ссылки для пользователя
+
+Message:
+]]>
+    <![CDATA[Ambiguous match of "я вхожу под пользователем с ролью "Обычный пользователь 1"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+features/login.feature:10:in `Когда я вхожу под пользователем с ролью "Обычный пользователь 1"']]>
+  </failure>
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Логин интернет-партнера" time="5.174435">
+  <failure message="failed Логин интернет-партнера" type="failed">
+    <![CDATA[Сценарий: Логин интернет-партнера
+
+* открыта страница для региона "Россия"
+Когда я вхожу под пользователем с ролью "Интернет-партнер"
+То на главной странице отображено имя пользователя
+* на главной странице отображены ссылки для пользователя
+Когда я перехожу на страницу паспорта
+То на странице паспорта отображены ссылки для пользователя
+
+Message:
+]]>
+    <![CDATA[Ambiguous match of "я вхожу под пользователем с ролью "Интернет-партнер"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+features/login.feature:18:in `Когда я вхожу под пользователем с ролью "Интернет-партнер"']]>
+  </failure>
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Некорректный логин" time="1.776401">
+  <failure message="failed Некорректный логин" type="failed">
+    <![CDATA[Сценарий: Некорректный логин
+
+* открыта страница для региона "Россия"
+Когда я вхожу под пользователем с ролью "Некорректный логин"
+То на странице логина показано сообщение о том, что такого пользователя не существует
+
+Message:
+]]>
+    <![CDATA[Ambiguous match of "я вхожу под пользователем с ролью "Некорректный логин"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+features/login.feature:26:in `Когда я вхожу под пользователем с ролью "Некорректный логин"']]>
+  </failure>
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Забаненный юзер" time="4.431504">
+  <failure message="failed Забаненный юзер" type="failed">
+    <![CDATA[Сценарий: Забаненный юзер
+
+* открыта страница для региона "Россия"
+Когда я вхожу под пользователем с ролью "Забаненный пользователь"
+То на странице логина показано сообщение о том, что пользователь заблокирован
+
+Message:
+]]>
+    <![CDATA[Ambiguous match of "я вхожу под пользователем с ролью "Забаненный пользователь"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+features/login.feature:30:in `Когда я вхожу под пользователем с ролью "Забаненный пользователь"']]>
+  </failure>
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Неактивный пользователь" time="1.848643">
+  <failure message="failed Неактивный пользователь" type="failed">
+    <![CDATA[Сценарий: Неактивный пользователь
+
+* открыта страница для региона "Россия"
+Когда я вхожу под пользователем с ролью "Неактивный пользователь"
+То на странице логина показано сообщение о том, что пользователь не активен
+
+Message:
+]]>
+    <![CDATA[Ambiguous match of "я вхожу под пользователем с ролью "Неактивный пользователь"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)
+features/login.feature:34:in `Когда я вхожу под пользователем с ролью "Неактивный пользователь"']]>
+  </failure>
   <system-out/>
   <system-err/>
 </testcase>

@@ -469,12 +469,187 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
     $('#'+element_id).css('color', '#000000');
   }
   
-</script></head><body><!-- Step count 22--><div class="cucumber"><div id="cucumber-header"><div id="label"><h1>Cucumber Features</h1></div><div id="summary"><p id="totals"></p><p id="duration"></p><div id="expand-collapse"><p id="expander">Expand All</p><p id="collapser">Collapse All</p></div></div></div><div class="feature"><pre class="comment"># language: ru<br/># encoding: utf-8<br/></pre><h2><span class="val">Функционал: Логин</span></h2><p class="narrative"></p><div class="background"><h3 id="background_0"><span class="keyword">Контекст</span> <span class="val"></span></h3><ol><script>makeRed('cucumber-header');makeRed('scenario_0');</script><li id='features_login_feature_7' class='step failed'><div class="step_name"><span class="keyword">* </span><span class="step val">открыта страница для <span class="param">региона</span> &quot;<span class="param">Россия</span>&quot;</span></div><div class="step_file"><span>features/step_definitions/region_select_steps.rb:83</span></div><div class="message"><pre>too many connection resets (due to Timeout::Error - Timeout::Error) after 3 requests on 21270900, last used 61.802820116 seconds ago (Net::HTTP::Persistent::Error)</pre></div><div class="backtrace"><pre>./features/step_definitions/region_select_steps.rb:85:in `/^открыта страница для (города|региона) "(.*)"$/'
-features/login.feature:7:in `* открыта страница для региона "Россия"'</pre></div><pre class="ruby"><code><span class="linenum">83</span>Допустим /^открыта страница для (города|региона) "(.*)"$/ do |other, region|
-<span class="linenum">84</span>  @region = region
-<span class="offending"><span class="linenum">85</span>  @browser.goto(construct_region_url(BASE_URL,region))</span>
-<span class="linenum">86</span>end
-<span class="linenum">87</span>
-<span class="linenum">88</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('4.5');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_0'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
-          <img id="img_0" style="display: none" src="./screenshots/FAILED_b6f4068f6.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_1'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
-          <img id="img_1" style="display: none" src="./screenshots/FAILED_b6f4068f6.png"/></span></div><div class='scenario'></div><div class='scenario'></div><div class='scenario'></div><div class='scenario'></div><div class='scenario'></div></div><script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>2m36.834s seconds</strong>";</script><script type="text/javascript">document.getElementById('totals').innerHTML = "0 scenarios<br />1 step (1 failed)";</script></div></body></html>
+</script></head><body><!-- Step count 22--><div class="cucumber"><div id="cucumber-header"><div id="label"><h1>Cucumber Features</h1></div><div id="summary"><p id="totals"></p><p id="duration"></p><div id="expand-collapse"><p id="expander">Expand All</p><p id="collapser">Collapse All</p></div></div></div><div class="feature"><pre class="comment"># language: ru<br/># encoding: utf-8<br/></pre><h2><span class="val">Функционал: Логин</span></h2><p class="narrative"></p><div class="background"><h3 id="background_0"><span class="keyword">Контекст</span> <span class="val"></span></h3><ol><li id='features_login_feature_7' class='step passed'><div class="step_name"><span class="keyword">* </span><span class="step val">открыта страница для <span class="param">региона</span> &quot;<span class="param">Россия</span>&quot;</span></div><div class="step_file"><span>features/step_definitions/region_select_steps.rb:83</span></div></li> <script type="text/javascript">moveProgressBar('4.5');</script></ol></div><div class='scenario'><span class="scenario_file">features/login.feature:9</span><h3 id="scenario_1"><span class="keyword">Сценарий:</span> <span class="val">Логин обычного пользователя</span></h3><ol> <script type="text/javascript">moveProgressBar('9.0');</script><script>makeRed('cucumber-header');makeRed('scenario_1');</script><li id='features_login_feature_10' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я вхожу под пользователем с ролью &quot;Обычный пользователь 1&quot;</span></div><div class="step_file"><span>features/login.feature:10</span></div><div class="message"><pre>Ambiguous match of "я вхожу под пользователем с ролью "Обычный пользователь 1"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:10:in `Когда я вхожу под пользователем с ролью "Обычный пользователь 1"'</pre></div><pre class="ruby"><code><span class="linenum">8</span>
+<span class="linenum">9</span>  Сценарий: Логин обычного пользователя
+<span class="offending"><span class="linenum">10</span>    Когда я вхожу под пользователем с ролью "Обычный пользователь 1"</span>
+<span class="linenum">11</span>       То на главной странице отображено имя пользователя
+<span class="linenum">12</span>        * на главной странице отображены ссылки для пользователя
+<span class="linenum">13</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('13.6');</script><script></script><li id='features_login_feature_11' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на главной странице отображено имя пользователя</span></div><div class="step_file"><span>features/login.feature:11</span></div><div class="message"><pre>Ambiguous match of "на главной странице отображено имя пользователя":
+
+features/step_definitions/login_api_steps.rb:105:in `/^на\ главной\ странице\ отображено\ имя\ пользователя$/'
+features/step_definitions/login_steps.rb:105:in `/^на\ главной\ странице\ отображено\ имя\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:11:in `То на главной странице отображено имя пользователя'</pre></div><pre class="ruby"><code><span class="linenum">9</span>  Сценарий: Логин обычного пользователя
+<span class="linenum">10</span>    Когда я вхожу под пользователем с ролью "Обычный пользователь 1"
+<span class="offending"><span class="linenum">11</span>       То на главной странице отображено имя пользователя</span>
+<span class="linenum">12</span>        * на главной странице отображены ссылки для пользователя
+<span class="linenum">13</span>
+<span class="linenum">14</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('18.1');</script><script></script><li id='features_login_feature_12' class='step failed'><div class="step_name"><span class="keyword">* </span><span class="step val">на главной странице отображены ссылки для пользователя</span></div><div class="step_file"><span>features/login.feature:12</span></div><div class="message"><pre>Ambiguous match of "на главной странице отображены ссылки для пользователя":
+
+features/step_definitions/login_api_steps.rb:135:in `/^на\ главной\ странице\ отображены\ ссылки\ для\ пользователя$/'
+features/step_definitions/login_steps.rb:135:in `/^на\ главной\ странице\ отображены\ ссылки\ для\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:12:in `* на главной странице отображены ссылки для пользователя'</pre></div><pre class="ruby"><code><span class="linenum">10</span>    Когда я вхожу под пользователем с ролью "Обычный пользователь 1"
+<span class="linenum">11</span>       То на главной странице отображено имя пользователя
+<span class="offending"><span class="linenum">12</span>        * на главной странице отображены ссылки для пользователя</span>
+<span class="linenum">13</span>
+<span class="linenum">14</span>    Когда я перехожу на страницу паспорта
+<span class="linenum">15</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('22.7');</script><script></script><li id='features_login_feature_14' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я перехожу на страницу паспорта</span></div><div class="step_file"><span>features/login.feature:14</span></div><div class="message"><pre>Ambiguous match of "я перехожу на страницу паспорта":
+
+features/step_definitions/login_api_steps.rb:141:in `/^я\ перехожу\ на\ страницу\ паспорта$/'
+features/step_definitions/login_steps.rb:141:in `/^я\ перехожу\ на\ страницу\ паспорта$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:14:in `Когда я перехожу на страницу паспорта'</pre></div><pre class="ruby"><code><span class="linenum">12</span>        * на главной странице отображены ссылки для пользователя
+<span class="linenum">13</span>
+<span class="offending"><span class="linenum">14</span>    Когда я перехожу на страницу паспорта</span>
+<span class="linenum">15</span>       То на странице паспорта отображены ссылки для пользователя
+<span class="linenum">16</span>
+<span class="linenum">17</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('27.2');</script><script></script><li id='features_login_feature_15' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на странице паспорта отображены ссылки для пользователя</span></div><div class="step_file"><span>features/login.feature:15</span></div><div class="message"><pre>Ambiguous match of "на странице паспорта отображены ссылки для пользователя":
+
+features/step_definitions/login_api_steps.rb:170:in `/^на\ странице\ паспорта\ отображены\ ссылки\ для\ пользователя$/'
+features/step_definitions/login_steps.rb:170:in `/^на\ странице\ паспорта\ отображены\ ссылки\ для\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:15:in `То на странице паспорта отображены ссылки для пользователя'</pre></div><pre class="ruby"><code><span class="linenum">13</span>
+<span class="linenum">14</span>    Когда я перехожу на страницу паспорта
+<span class="offending"><span class="linenum">15</span>       То на странице паспорта отображены ссылки для пользователя</span>
+<span class="linenum">16</span>
+<span class="linenum">17</span>  Сценарий: Логин интернет-партнера
+<span class="linenum">18</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('31.8');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_0'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
+          <img id="img_0" style="display: none" src="./screenshots/FAILED_8949725cc.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_1'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
+          <img id="img_1" style="display: none" src="./screenshots/FAILED_8949725cc.png"/></span></div><div class='scenario'><span class="scenario_file">features/login.feature:17</span><h3 id="scenario_2"><span class="keyword">Сценарий:</span> <span class="val">Логин интернет-партнера</span></h3><ol> <script type="text/javascript">moveProgressBar('36.3');</script><script>makeRed('scenario_2');</script><li id='features_login_feature_18' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я вхожу под пользователем с ролью &quot;Интернет-партнер&quot;</span></div><div class="step_file"><span>features/login.feature:18</span></div><div class="message"><pre>Ambiguous match of "я вхожу под пользователем с ролью "Интернет-партнер"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:18:in `Когда я вхожу под пользователем с ролью "Интернет-партнер"'</pre></div><pre class="ruby"><code><span class="linenum">16</span>
+<span class="linenum">17</span>  Сценарий: Логин интернет-партнера
+<span class="offending"><span class="linenum">18</span>     Когда я вхожу под пользователем с ролью "Интернет-партнер"</span>
+<span class="linenum">19</span>        То на главной странице отображено имя пользователя
+<span class="linenum">20</span>         * на главной странице отображены ссылки для пользователя
+<span class="linenum">21</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('40.9');</script><script></script><li id='features_login_feature_19' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на главной странице отображено имя пользователя</span></div><div class="step_file"><span>features/login.feature:19</span></div><div class="message"><pre>Ambiguous match of "на главной странице отображено имя пользователя":
+
+features/step_definitions/login_api_steps.rb:105:in `/^на\ главной\ странице\ отображено\ имя\ пользователя$/'
+features/step_definitions/login_steps.rb:105:in `/^на\ главной\ странице\ отображено\ имя\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:19:in `То на главной странице отображено имя пользователя'</pre></div><pre class="ruby"><code><span class="linenum">17</span>  Сценарий: Логин интернет-партнера
+<span class="linenum">18</span>     Когда я вхожу под пользователем с ролью "Интернет-партнер"
+<span class="offending"><span class="linenum">19</span>        То на главной странице отображено имя пользователя</span>
+<span class="linenum">20</span>         * на главной странице отображены ссылки для пользователя
+<span class="linenum">21</span>
+<span class="linenum">22</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('45.4');</script><script></script><li id='features_login_feature_20' class='step failed'><div class="step_name"><span class="keyword">* </span><span class="step val">на главной странице отображены ссылки для пользователя</span></div><div class="step_file"><span>features/login.feature:20</span></div><div class="message"><pre>Ambiguous match of "на главной странице отображены ссылки для пользователя":
+
+features/step_definitions/login_api_steps.rb:135:in `/^на\ главной\ странице\ отображены\ ссылки\ для\ пользователя$/'
+features/step_definitions/login_steps.rb:135:in `/^на\ главной\ странице\ отображены\ ссылки\ для\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:20:in `* на главной странице отображены ссылки для пользователя'</pre></div><pre class="ruby"><code><span class="linenum">18</span>     Когда я вхожу под пользователем с ролью "Интернет-партнер"
+<span class="linenum">19</span>        То на главной странице отображено имя пользователя
+<span class="offending"><span class="linenum">20</span>         * на главной странице отображены ссылки для пользователя</span>
+<span class="linenum">21</span>
+<span class="linenum">22</span>     Когда я перехожу на страницу паспорта
+<span class="linenum">23</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('50.0');</script><script></script><li id='features_login_feature_22' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я перехожу на страницу паспорта</span></div><div class="step_file"><span>features/login.feature:22</span></div><div class="message"><pre>Ambiguous match of "я перехожу на страницу паспорта":
+
+features/step_definitions/login_api_steps.rb:141:in `/^я\ перехожу\ на\ страницу\ паспорта$/'
+features/step_definitions/login_steps.rb:141:in `/^я\ перехожу\ на\ страницу\ паспорта$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:22:in `Когда я перехожу на страницу паспорта'</pre></div><pre class="ruby"><code><span class="linenum">20</span>         * на главной странице отображены ссылки для пользователя
+<span class="linenum">21</span>
+<span class="offending"><span class="linenum">22</span>     Когда я перехожу на страницу паспорта</span>
+<span class="linenum">23</span>        То на странице паспорта отображены ссылки для пользователя
+<span class="linenum">24</span>
+<span class="linenum">25</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('54.5');</script><script></script><li id='features_login_feature_23' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на странице паспорта отображены ссылки для пользователя</span></div><div class="step_file"><span>features/login.feature:23</span></div><div class="message"><pre>Ambiguous match of "на странице паспорта отображены ссылки для пользователя":
+
+features/step_definitions/login_api_steps.rb:170:in `/^на\ странице\ паспорта\ отображены\ ссылки\ для\ пользователя$/'
+features/step_definitions/login_steps.rb:170:in `/^на\ странице\ паспорта\ отображены\ ссылки\ для\ пользователя$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:23:in `То на странице паспорта отображены ссылки для пользователя'</pre></div><pre class="ruby"><code><span class="linenum">21</span>
+<span class="linenum">22</span>     Когда я перехожу на страницу паспорта
+<span class="offending"><span class="linenum">23</span>        То на странице паспорта отображены ссылки для пользователя</span>
+<span class="linenum">24</span>
+<span class="linenum">25</span>  Сценарий: Некорректный логин
+<span class="linenum">26</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('59.0');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_2'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
+          <img id="img_2" style="display: none" src="./screenshots/FAILED_b4b99a0c4.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_3'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
+          <img id="img_3" style="display: none" src="./screenshots/FAILED_b4b99a0c4.png"/></span></div><div class='scenario'><span class="scenario_file">features/login.feature:25</span><h3 id="scenario_3"><span class="keyword">Сценарий:</span> <span class="val">Некорректный логин</span></h3><ol> <script type="text/javascript">moveProgressBar('63.6');</script><script>makeRed('scenario_3');</script><li id='features_login_feature_26' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я вхожу под пользователем с ролью &quot;Некорректный логин&quot;</span></div><div class="step_file"><span>features/login.feature:26</span></div><div class="message"><pre>Ambiguous match of "я вхожу под пользователем с ролью "Некорректный логин"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:26:in `Когда я вхожу под пользователем с ролью "Некорректный логин"'</pre></div><pre class="ruby"><code><span class="linenum">24</span>
+<span class="linenum">25</span>  Сценарий: Некорректный логин
+<span class="offending"><span class="linenum">26</span>     Когда я вхожу под пользователем с ролью "Некорректный логин"</span>
+<span class="linenum">27</span>        То на странице логина показано сообщение о том, что такого пользователя не существует
+<span class="linenum">28</span>
+<span class="linenum">29</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('68.1');</script><script></script><li id='features_login_feature_27' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на странице логина показано сообщение о том, что такого пользователя не существует</span></div><div class="step_file"><span>features/login.feature:27</span></div><div class="message"><pre>Ambiguous match of "на странице логина показано сообщение о том, что такого пользователя не существует":
+
+features/step_definitions/login_api_steps.rb:80:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ такого\ пользователя\ не\ существует$/'
+features/step_definitions/login_steps.rb:80:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ такого\ пользователя\ не\ существует$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:27:in `То на странице логина показано сообщение о том, что такого пользователя не существует'</pre></div><pre class="ruby"><code><span class="linenum">25</span>  Сценарий: Некорректный логин
+<span class="linenum">26</span>     Когда я вхожу под пользователем с ролью "Некорректный логин"
+<span class="offending"><span class="linenum">27</span>        То на странице логина показано сообщение о том, что такого пользователя не существует</span>
+<span class="linenum">28</span>
+<span class="linenum">29</span>  Сценарий: Забаненный юзер
+<span class="linenum">30</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('72.7');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_4'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
+          <img id="img_4" style="display: none" src="./screenshots/FAILED_5ee41efbd.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_5'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
+          <img id="img_5" style="display: none" src="./screenshots/FAILED_5ee41efbd.png"/></span></div><div class='scenario'><span class="scenario_file">features/login.feature:29</span><h3 id="scenario_4"><span class="keyword">Сценарий:</span> <span class="val">Забаненный юзер</span></h3><ol> <script type="text/javascript">moveProgressBar('77.2');</script><script>makeRed('scenario_4');</script><li id='features_login_feature_30' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я вхожу под пользователем с ролью &quot;Забаненный пользователь&quot;</span></div><div class="step_file"><span>features/login.feature:30</span></div><div class="message"><pre>Ambiguous match of "я вхожу под пользователем с ролью "Забаненный пользователь"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:30:in `Когда я вхожу под пользователем с ролью "Забаненный пользователь"'</pre></div><pre class="ruby"><code><span class="linenum">28</span>
+<span class="linenum">29</span>  Сценарий: Забаненный юзер
+<span class="offending"><span class="linenum">30</span>     Когда я вхожу под пользователем с ролью "Забаненный пользователь"</span>
+<span class="linenum">31</span>        То на странице логина показано сообщение о том, что пользователь заблокирован
+<span class="linenum">32</span>
+<span class="linenum">33</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('81.8');</script><script></script><li id='features_login_feature_31' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на странице логина показано сообщение о том, что пользователь заблокирован</span></div><div class="step_file"><span>features/login.feature:31</span></div><div class="message"><pre>Ambiguous match of "на странице логина показано сообщение о том, что пользователь заблокирован":
+
+features/step_definitions/login_api_steps.rb:95:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ пользователь\ заблокирован$/'
+features/step_definitions/login_steps.rb:95:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ пользователь\ заблокирован$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:31:in `То на странице логина показано сообщение о том, что пользователь заблокирован'</pre></div><pre class="ruby"><code><span class="linenum">29</span>  Сценарий: Забаненный юзер
+<span class="linenum">30</span>     Когда я вхожу под пользователем с ролью "Забаненный пользователь"
+<span class="offending"><span class="linenum">31</span>        То на странице логина показано сообщение о том, что пользователь заблокирован</span>
+<span class="linenum">32</span>
+<span class="linenum">33</span>  Сценарий: Неактивный пользователь
+<span class="linenum">34</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('86.3');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_6'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
+          <img id="img_6" style="display: none" src="./screenshots/FAILED_db7e50d9a.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_7'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
+          <img id="img_7" style="display: none" src="./screenshots/FAILED_db7e50d9a.png"/></span></div><div class='scenario'><span class="scenario_file">features/login.feature:33</span><h3 id="scenario_5"><span class="keyword">Сценарий:</span> <span class="val">Неактивный пользователь</span></h3><ol> <script type="text/javascript">moveProgressBar('90.9');</script><script>makeRed('scenario_5');</script><li id='features_login_feature_34' class='step failed'><div class="step_name"><span class="keyword">Когда </span><span class="step val">я вхожу под пользователем с ролью &quot;Неактивный пользователь&quot;</span></div><div class="step_file"><span>features/login.feature:34</span></div><div class="message"><pre>Ambiguous match of "я вхожу под пользователем с ролью "Неактивный пользователь"":
+
+features/step_definitions/login_api_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+features/step_definitions/login_steps.rb:44:in `/^я\ вхожу\ под\ пользователем\ с\ ролью\ "(.*)"$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:34:in `Когда я вхожу под пользователем с ролью "Неактивный пользователь"'</pre></div><pre class="ruby"><code><span class="linenum">32</span>
+<span class="linenum">33</span>  Сценарий: Неактивный пользователь
+<span class="offending"><span class="linenum">34</span>     Когда я вхожу под пользователем с ролью "Неактивный пользователь"</span>
+<span class="linenum">35</span>        То на странице логина показано сообщение о том, что пользователь не активен
+<span class="linenum">36</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('95.4');</script><script></script><li id='features_login_feature_35' class='step failed'><div class="step_name"><span class="keyword">То </span><span class="step val">на странице логина показано сообщение о том, что пользователь не активен</span></div><div class="step_file"><span>features/login.feature:35</span></div><div class="message"><pre>Ambiguous match of "на странице логина показано сообщение о том, что пользователь не активен":
+
+features/step_definitions/login_api_steps.rb:87:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ пользователь\ не\ активен$/'
+features/step_definitions/login_steps.rb:87:in `/^на\ странице\ логина\ показано\ сообщение\ о\ том,\ что\ пользователь\ не\ активен$/'
+
+You can run again with --guess to make Cucumber be more smart about it
+ (Cucumber::Ambiguous)</pre></div><div class="backtrace"><pre>features/login.feature:35:in `То на странице логина показано сообщение о том, что пользователь не активен'</pre></div><pre class="ruby"><code><span class="linenum">33</span>  Сценарий: Неактивный пользователь
+<span class="linenum">34</span>     Когда я вхожу под пользователем с ролью "Неактивный пользователь"
+<span class="offending"><span class="linenum">35</span>        То на странице логина показано сообщение о том, что пользователь не активен</span>
+<span class="linenum">36</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre></li> <script type="text/javascript">moveProgressBar('100.0');</script></ol><span class="embed"><a href="" onclick="img=document.getElementById('img_8'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">Screenshot</a><br>&nbsp;
+          <img id="img_8" style="display: none" src="./screenshots/FAILED_2ef6096c6.png"/></span><span class="embed"><a href="" onclick="img=document.getElementById('img_9'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false"></a>Страница: <a href='http://russia.master.prontosoft.by/'>http://russia.master.prontosoft.by/</a><a</a><br>&nbsp;
+          <img id="img_9" style="display: none" src="./screenshots/FAILED_2ef6096c6.png"/></span></div></div><script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0m37.174s seconds</strong>";</script><script type="text/javascript">document.getElementById('totals').innerHTML = "5 scenarios (5 failed)<br />21 steps (16 failed, 5 passed)";</script></div></body></html>
