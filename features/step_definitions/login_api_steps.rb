@@ -36,7 +36,11 @@ end
 Когда %{я отсылаю логин и пароль роли "$role"} do |role|
   credentials = get_login_and_password_for_role(role)
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
-  
+  response = HTTParty.get('http://ag.regions.devel.ps/mobile_api/1.0/account/login')
+  #response = HTTParty.post('http://ag.regions.devel.ps/mobile_api/1.0/account/login', :body => {:username => credentials['login'], :password => credentials['password']})
+  puts response.body
+  puts response.code
+  puts JSON.parse(response.to_s)
   @current_user_name = credentials['username']
 end
 

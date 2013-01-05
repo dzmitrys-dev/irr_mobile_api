@@ -26,6 +26,8 @@ require 'net/sftp'
 require 'open3'
 require 'diffy'
 require 'base64'
+require 'httparty'
+require 'json'
 
 
 $: << File.dirname(__FILE__)+'/../../lib'

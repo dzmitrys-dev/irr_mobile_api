@@ -14,3 +14,7 @@ gem 'watir-webdriver-performance'
 gem 'net-ssh'
 gem 'net-sftp'
 gem 'diffy'
+
+gem "httparty"
+gem "multi_json"
+gem 'json'
