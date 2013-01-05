@@ -23,3 +23,6 @@ cucumber.html
 cucumber.json
 chromedriver.log
 rerun.txt
+junit
+cucumber.html
+screenshots
