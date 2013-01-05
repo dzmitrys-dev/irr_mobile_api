@@ -21,3 +21,5 @@ cucumber_rerun.html
 cucumber_rerun.json
 cucumber.html
 cucumber.json
+chromedriver.log
+rerun.txt
