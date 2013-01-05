@@ -37,7 +37,7 @@ end
   credentials = get_login_and_password_for_role(role)
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
   #response = HTTParty.get('http://ag.regions.devel.ps/mobile_api/1.0/account/login')
-  response = HTTParty.post('http://ag.regions.devel.ps/mobile_api/1.0/account/login', :body => {:username => credentials['password'], :password => credentials['password']})
+  response = HTTParty.post('http://ag.regions.devel.ps/mobile_api/1.0/account/login', :body => {:username => credentials['login'], :password => credentials['password']})
   puts response.body
   puts response.code
   response = JSON.parse(response)

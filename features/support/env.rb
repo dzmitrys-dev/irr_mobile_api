@@ -67,7 +67,7 @@ def start_browser
   end
   return browser
 end
-
+=begin Зануливание для браузера TODO: Занулить полностью
 browser = start_browser
 
 # Проверяем на ошибки JS
@@ -171,7 +171,7 @@ at_exit do
   browser.quit if browser
   headless.destroy if HEADLESS
 end
-
+=end
 # Store all subclasses
 class Class
   def subclasses
