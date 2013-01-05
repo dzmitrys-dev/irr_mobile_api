@@ -16,3 +16,8 @@ tmp
 .yardoc
 _yardoc
 doc/
+screenshots
+cucumber_rerun.html
+cucumber_rerun.json
+cucumber.html
+cucumber.json
