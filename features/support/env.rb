@@ -67,7 +67,7 @@ def start_browser
   end
   return browser
 end
-=begin Зануливание для браузера TODO: Занулить полностью
+=begin Зануливание для браузера TODO: Занулить полностью, перенести использование after_step в новый контекст
 browser = start_browser
 
 # Проверяем на ошибки JS
