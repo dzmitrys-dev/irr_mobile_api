@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+<user deactivate-untouched="false">
+<match>
+  <user-id>9531859</user-id>
+</match>
+<store-ad validfrom="2012-10-19T02:52:17" validtill="2012-10-20T08:52:17" source-id="101080" file-id="32" power-ad="0" category="/cars/passenger/used">
+<regions>
+<region path="/russia/saint-petersburg-region"/>
+</regions>
+<title>
+Mazda 2, 2009 г.в., автоматическая, 1498 куб., пробег: 57000 км.
+</title>
+<description>
+Возможно приобретение в кредит! Возможен обмен на Ваш автомобиль! А/м по ПТС 2008 г., ПТС выдан в 2009 г., дата приобретения 24.07.2009 года! - 1 хозяин - АКПП - Airbag (6 шт.) - Климат-контроль (кондиционер) - ABS - электроусилитель руля - регулировка руля - бортовой компьютер - штатная сигнализация Mazda + дополнительная Scher-Khan - штатный иммобилайзер - центральный замок - 2 комплекта ключей - электрические стеклоподъемники - электрозеркала с обогревом и электроскладыванием - электрокорректор фар - обогрев сидений - микролифт водительского сиденья - музыка оригинальная mazda CD/MP3/AUX - мультируль - американская тонировка Johnson - оригинальные легкосплавные диски Mazda R15 - есть ГТО до 07.2014 г. - пробег 57 тыс. км.
+</description>
+<custom-fields>
+<field name="offertype">продам</field>
+<field name="make">Mazda</field>
+<field name="model">2</field>
+<field name="car-year">2009</field>
+<field name="color">коричневый металлик</field>
+<field name="turbo">бензин инжектор</field>
+<field name="volume">1498</field>
+<field name="engine-power">103</field>
+<field name="transmittion">автоматическая</field>
+<field name="gear">передний</field>
+<field name="wheel">Левый</field>
+<field name="bodytype">хэтчбек</field>
+<field name="condition">отличное</field>
+<field name="alarm">есть</field>
+<field name="centrallock">true</field>
+<field name="music_type">магнитола CD</field>
+<field name="salon">тканевый</field>
+<field name="airbag">водителя;пассажира;боковые передние;боковые задние</field>
+<field name="onboardcomp">true</field>
+<field name="abs">true</field>
+<field name="power_steering">электроусилитель</field>
+<field name="l_disks">легкосплавные</field>
+<field name="darkwind">true</field>
+<field name="climacontrol">климат-контроль</field>
+<field name="electromirror">регулировка и обогрев</field>
+<field name="heatingseat">всех</field>
+<field name="weelcontroll">по высоте</field>
+<field name="owners_count">один</field>
+<field name="fuel">бензин</field>
+<field name="mileage">57000</field>
+<field name="contact">Менеджер</field>
+<field name="phone">
++7(812)702-79-09, +7(905)210-60-62, +7(906)276-71-28
+</field>
+</custom-fields>
+<price currency="RUR" value="449000"/>
+<fotos>
+<foto-local url="/pictures/e5b3dc520435df47dee192a61cdede22.jpg" md5="8f24eba05bba2578b151a99afef53aa2"/>
+<foto-local url="/pictures/025ebe840d291bae605f55718ae799c1.jpg" md5="1df07e3a7a832d5a9e6c9185fa951f39"/>
+<foto-local url="/pictures/729899e40e1f4256426cf5b9ed7fecac.jpg" md5="2ba2badd775dba571377b8fef619fb69"/>
+<foto-local url="/pictures/746cfb581f37bd034caee6650d036f08.jpg" md5="3d351af85a3a3681eb6ed692634bbfc2"/>
+<foto-local url="/pictures/ec07172845084e1d7007589cb5f8b8ef.jpg" md5="2a09283e9a512d85a4e02125860eaa6e"/>
+<foto-local url="/pictures/327e2c3fbed83c15c03ff50230516494.jpg" md5="147d2d51212c53aca4298a81e60a3173"/>
+</fotos>
+</store-ad>
+
+</user>
+</users>

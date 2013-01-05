@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="Подача объявления с фото - Недвижимость -&gt; Вторичный рынок (Москва)" skipped="0" tests="3" time="106.446696">
+<testcase classname="Подача объявления с фото - Недвижимость -&gt; Вторичный рынок (Москва)" name="Подача объявления с фотографией" time="75.830503">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Подача объявления с фото - Недвижимость -&gt; Вторичный рынок (Москва)" name="Проверка деталей поданного объявления" time="17.058738">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Подача объявления с фото - Недвижимость -&gt; Вторичный рынок (Москва)" name="Проверка индексации" time="13.557455">
+  <system-out/>
+  <system-err/>
+</testcase>
+  <system-out>
+    <![CDATA[]]>
+  </system-out>
+  <system-err>
+    <![CDATA[]]>
+  </system-err>
+</testsuite>

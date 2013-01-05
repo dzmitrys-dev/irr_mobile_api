@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="Логин" skipped="0" tests="5" time="33.342872">
+<testcase classname="Логин" name="Логин обычного пользователя" time="8.043391">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Логин интернет-партнера" time="8.884668">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Некорректный логин" time="5.277475">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Забаненный юзер" time="5.403137">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Логин" name="Неактивный пользователь" time="5.734200">
+  <system-out/>
+  <system-err/>
+</testcase>
+  <system-out>
+    <![CDATA[]]>
+  </system-out>
+  <system-err>
+    <![CDATA[]]>
+  </system-err>
+</testsuite>

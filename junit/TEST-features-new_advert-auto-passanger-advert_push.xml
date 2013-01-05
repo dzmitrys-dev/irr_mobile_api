@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="Поднятие объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" skipped="0" tests="3" time="149.535835">
+<testcase classname="Поднятие объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" name="Поднятие объявления" time="84.813609">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Поднятие объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" name="Проверка деталей поданного объявления" time="54.041112">
+  <system-out/>
+  <system-err/>
+</testcase>
+<testcase classname="Поднятие объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" name="Проверка индексации" time="10.681114">
+  <system-out/>
+  <system-err/>
+</testcase>
+  <system-out>
+    <![CDATA[]]>
+  </system-out>
+  <system-err>
+    <![CDATA[]]>
+  </system-err>
+</testsuite>

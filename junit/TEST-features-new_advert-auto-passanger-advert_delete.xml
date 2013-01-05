@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="Удаление объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" skipped="0" tests="1" time="6.905004">
+<testcase classname="Удаление объявления - Авто и мото -&gt; Легковые автомобили -&gt; Автомобили с пробегом" name="Проверка индексации" time="6.905004">
+  <system-out/>
+  <system-err/>
+</testcase>
+  <system-out>
+    <![CDATA[]]>
+  </system-out>
+  <system-err>
+    <![CDATA[]]>
+  </system-err>
+</testsuite>

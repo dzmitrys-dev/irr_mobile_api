@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+<user deactivate-untouched="false">
+<match>
+  <user-id>10930139</user-id>
+</match>
+<store-ad validfrom="2012-10-11T17:00:00" validtill="2012-10-29T18:00:00" source-id="43011111" file-id="430" power-ad="0" category="/business/business-services/credit">
+  <title>Помощь в получении кредита. Деньги за 1 час!</title> 
+  <description>Предлагаем помощь в получении кредита в банках Санкт-Петербурга. Без предоплаты. Экспресс кредит до 200 тр за 1 час. Потребительский кредит до 3000000 р в течении 2 рабочих дней. Работаем со сложными случаями: -Нет официального места работы -Были просрочки по кредитам Минимальные требования: -Возраст от 18 лет</description> 
+ <custom-fields>
+  <field name="region">Санкт-Петербург</field>  
+  <field name="address_city">Санкт-Петербург</field>
+  <field name="phone">89219954446</field> 
+  <field name="price">100</field> 
+  <field name="web">piter_credit@mail.ru</field> 
+  <field name="currency">RUB</field> 
+  </custom-fields>
+ <offers>
+  <offer name="ad.highlight.premium.18" validfrom="2012-10-11T17:00:00" validtill="2012-10-29T18:00:00" /> 
+  </offers>
+  </store-ad>
+
+
+</user>
+</users>
