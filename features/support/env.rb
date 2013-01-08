@@ -1,4 +1,5 @@
 # encoding: utf-8
+API_URL = ENV['API_URL'] || 'http://ag.regions.devel.ps/mobile_api/1.0/'
 BASE_URL = ENV['BASE_URL'] || "http://irr.ru"
 DRIVER = (ENV['WEB_DRIVER'] || :firefox).to_sym
 HEADLESS = ENV['HEADLESS'] || true
