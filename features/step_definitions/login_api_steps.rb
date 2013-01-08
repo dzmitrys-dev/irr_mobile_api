@@ -33,20 +33,35 @@ def get_login_and_password_for_role(role)
 end
 
 #TODO: Доработать метод
-Когда %{я отсылаю логин и пароль роли "$role"} do |role|
+Когда %{я вхожу под пользователем с ролью "$role" посредством API} do |role|
   credentials = get_login_and_password_for_role(role)
+  @@credentials = credentials
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
-  #response = HTTParty.get('http://ag.regions.devel.ps/mobile_api/1.0/account/login')
-  response = HTTParty.post('http://ag.regions.devel.ps/mobile_api/1.0/account/login', :body => {:username => credentials['login'], :password => credentials['password']})
-  puts response.body
-  puts response.code
-  response = JSON.parse(response)
-  if response['user_info'].has_value?(credentials['login']);
-    puts "YESSSSSSSSSSS"
-  else
-    puts "NOOOOOOOO"
-  end
-  puts response
-  @current_user_name = credentials['username']
+  @@response = HTTParty.post(API_URL + 'account/login', :body => {:username => credentials['login'], :password => credentials['password']})
+  @@response = JSON.parse(@@response)
+  puts @@response
 end
 
+То %{я запоминаю авторизационный токен} do 
+  @@token = @@response['auth_token']
+  puts "Авторизационный токен: " + @@token
+end
+
+То %{в ответе должно быть указано имя пользователя} do 
+  unless @@response['user_info'].has_value?(@@credentials['login']);
+    raise "Невозможно выполнить вход пользователем " + role + " DEBUG: "
+    puts @@response
+  end
+end
+
+То %{в ответе отображен статус интернет-партнера} do 
+  unless @@response['is_partner'] = true
+    raise "Данный пользователь не является интернет-партнером"
+  end
+end
+
+То %{в ответе отображен статус обычного пользователя} do 
+  unless @@response['is_partner'] = true
+    raise "Данный пользователь не является обычным пользователем"
+  end
+end
