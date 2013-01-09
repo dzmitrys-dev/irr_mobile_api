@@ -32,10 +32,10 @@ def get_login_and_password_for_role(role)
   end
 end
 
-#TODO: Доработать метод
+#TODO: привести к DRY часть HTTParty.post(API_URL
 Когда %{я вхожу под пользователем с ролью "$role" посредством API} do |role|
   credentials = get_login_and_password_for_role(role)
-  @@credentials = credentials
+  $credentials = credentials
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
   @@response = HTTParty.post(API_URL + 'account/login', :body => {:username => credentials['login'], :password => credentials['password']})
   @@response = JSON.parse(@@response)
@@ -43,13 +43,13 @@ end
 end
 
 То %{я запоминаю авторизационный токен} do 
-  @@token = @@response['auth_token']
-  puts "Авторизационный токен: " + @@token
+  $token = @@response['auth_token']
+  puts "Авторизационный токен: " + $token
 end
 
 То %{в ответе должно быть указано имя пользователя} do 
-  unless @@response['user_info'].has_value?(@@credentials['login']);
-    raise "Невозможно выполнить вход пользователем " + role + " DEBUG: "
+  unless @@response['user_info'].has_value?($credentials['login']);
+    raise "Невозможно получить данные пользователя роли " + role + " DEBUG: "
     puts @@response
   end
 end
