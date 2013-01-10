@@ -6,6 +6,17 @@ HEADLESS = ENV['HEADLESS'] || true
 ENABLE_FLASH = ENV['FLASH'] || false
 FAIL_FAST = ENV['FAILFAST'] || false
 
+#TODO:Вынести методы в APIHelper. Сделать метод отправки запроса
+#Глобальные методы
+
+def checkforerrors(response)
+  if response['error'] != nil
+    puts response
+    raise response['error']['description']
+  end
+end
+
+#TODO: Убрать лишнее
 require 'bundler/setup'
 require 'watir-webdriver'
 require "watir-webdriver/extensions/alerts"
