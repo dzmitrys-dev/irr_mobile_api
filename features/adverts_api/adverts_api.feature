@@ -10,6 +10,7 @@
         | parameter                  | value                           |
         | Категория                  | classified/cars/passenger/used/ |
         | Регион                     | russia/moskva-gorod/            |
+        | Тип объявления             | auto_sprobegom                  |
         | Модель                     | A4                              |
         | Цена                       | 300000                          |
         | Валюта                     | RUR                             |
