@@ -11,8 +11,7 @@ FAIL_FAST = ENV['FAILFAST'] || false
 
 def checkforerrors(response)
   if response['error'] != nil
-    puts response
-    raise response['error']['description']
+    raise response['error']['description'] + response.to_s
   end
 end
 
