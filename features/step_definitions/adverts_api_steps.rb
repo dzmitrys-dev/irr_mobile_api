@@ -1,5 +1,6 @@
 # coding: utf-8
 
+#TODO: Набивать сразу хэш, а не массив
 def setfields(page_params)
   customfieldsarray = []
   page_params.hashes.each do |hash|
@@ -13,30 +14,30 @@ def setfields(page_params)
       when "Модель"
         @model = hash['value']
         customfieldsarray << "model" 
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
       when "Цена"
         @price = hash['value']
         customfieldsarray << "price" 
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
       when "Валюта"
         @price = hash['value']
         customfieldsarray << "currency" 
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
       when "Год выпуска"
         @year = hash['value']
         customfieldsarray << "car-year" 
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
       when "Марка"
         customfieldsarray << "make"
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
         @mark = hash['value']
       when "Тип кузова"
         customfieldsarray << "bodytype"
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
         @body_type = hash['value']
       when "Тип трансмиссии"
         customfieldsarray << "transmittion"
-        customfieldsarray << hash['value']
+        customfieldsarray << [hash['value']]
         @transmission = hash['value']
       end
   end
@@ -49,8 +50,8 @@ end
 То %{я подаю объявление со следующими параметрами:} do |page_params|
   setfields(page_params)
   response = HTTParty.post(API_URL + 'advertisements/advert',
-   :body => {:auth_token => $token, :category => "classified/cars/passenger/used/",
-     :region => @region, :advert_type => "auto_sprobegom",
+   :body => {:auth_token => $token, :category => @category,
+     :region => @region, :advert_type => @advert_type,
       :advertisement => {:custom_fields => @customfields}})
   response = JSON.parse(response)
   puts response
