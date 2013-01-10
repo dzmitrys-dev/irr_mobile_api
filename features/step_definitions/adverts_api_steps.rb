@@ -44,10 +44,12 @@ def setfields(page_params)
   puts @customfields
 end
 
+#TODO: Вложить поля токен, категория, регион и тип объявления в отдельный хеш и вынести отправку запроса в отдельный класс
 #TODO: Сделать словарь значений полей.
 То %{я подаю объявление со следующими параметрами:} do |page_params|
   setfields(page_params)
-  response = HTTParty.post(API_URL + 'advertisements/advert', :body => {:auth_token => $token, :category => "classified/cars/passenger/used/",
+  response = HTTParty.post(API_URL + 'advertisements/advert',
+   :body => {:auth_token => $token, :category => "classified/cars/passenger/used/",
      :region => @region, :advert_type => "auto_sprobegom",
       :advertisement => {:custom_fields => @customfields}})
   response = JSON.parse(response)
