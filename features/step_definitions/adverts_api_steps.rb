@@ -64,10 +64,10 @@ end
 
 То %{я запоминаю идентификатор объявления} do
   puts @response
-  if @response['id'].nil?
+  if @response['advertisement']['id'].nil?
     raise "Невозможно получить ID объявления. " + @response.to_s
   end
-  @advertisement_id = @response['id']
+  @advertisement_id = @response['advertisement']['id']
   puts @advertisement_id
 end
 
