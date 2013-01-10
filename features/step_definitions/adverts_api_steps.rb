@@ -48,7 +48,6 @@ def setfields(page_params)
       end
   end
   @customfields = Hash[*customfieldsarray]
-  puts @customfields
 end
 
 #TODO: Вложить поля токен, категория, регион и тип объявления в отдельный хеш и вынести отправку запроса в отдельный класс
@@ -64,7 +63,11 @@ end
 end
 
 То %{я запоминаю идентификатор объявления} do
-  @advertisement_id = response['id']
+  puts @response
+  if @response['id'].nil?
+    raise "Невозможно получить ID объявления. " + @response.to_s
+  end
+  @advertisement_id = @response['id']
   puts @advertisement_id
 end
 
