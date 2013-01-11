@@ -97,8 +97,41 @@ end
 end
 
 То %{я удаляю объявление} do
-  response = HTTParty.delete(API_URL + 'advertisements/advert/' + @advertisement_id)
+  response = HTTParty.delete(API_URL + 'advertisements/advert/' + @advertisement_id, :body => {:auth_token => $token})
   response = JSON.parse(response)
   puts response
   checkforerrors(response)
+end
+
+То %{я добавляю объявление в избранное} do
+  response = HTTParty.post(API_URL + 'advertisements/advert/' + @advertisement_id + '/favorite', :body => {:auth_token => $token})
+  response = JSON.parse(response)
+  puts response
+  checkforerrors(response)
+end
+
+То %{я удаляю объявление из избранного} do
+  response = HTTParty.delete(API_URL + 'advertisements/advert/' + @advertisement_id + '/favorite', :body => {:auth_token => $token})
+  response = JSON.parse(response)
+  puts response
+  checkforerrors(response)
+end
+
+То %{я получаю список избранных объявлений} do
+  response = HTTParty.get(API_URL + 'advertisements/favorites', :body => {:auth_token => $token})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+То %{я проверяю, что в списке избранных объявлений есть объявление с таким идентификатором} do
+  unless @response['advertisements'].has_value?(@advertisement_id)
+    raise "Объявление с данным идентификатором не найдено списке избранных. Полученный ответ: " + @response
+  end
+end
+
+То %{я проверяю, что в списке избранных объявлений нет объявления с таким идентификатором} do
+  if @response['advertisements'].has_value?(@advertisement_id)
+    raise "Объявление с данным идентификатором присутствует списке избранных. Полученный ответ: " + @response
+  end
 end
