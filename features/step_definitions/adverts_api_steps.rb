@@ -81,7 +81,7 @@ end
   puts @advertisement_id
 end
 
-То %{я получаю объявление с заданным идентификатором} do |page_params|
+То %{я получаю объявление с заданным идентификатором} do
   response = HTTParty.get(API_URL + 'advertisements/advert/' + @advertisement_id)
   @response = JSON.parse(response)
   puts @response
@@ -94,4 +94,11 @@ end
       raise "В объявлении не найдено значение: " + hash['value'] + " Полученный ответ: " + @response.to_s
     end
   end
+end
+
+То %{я удаляю объявление} do
+  response = HTTParty.delete(API_URL + 'advertisements/advert/' + @advertisement_id)
+  response = JSON.parse(response)
+  puts response
+  checkforerrors(response)
 end
