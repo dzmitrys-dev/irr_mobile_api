@@ -54,7 +54,7 @@ end
 #TODO: Сделать словарь значений полей.
 То %{я подаю объявление со следующими параметрами:} do |page_params|
   setfields(page_params)
-  response = HTTParty.post(API_URL + 'advertisements/advert',
+  response = HTTParty.put(API_URL + 'advertisements/advert',
    :body => {:auth_token => $token, :category => @category, :region => @region, :advert_type => @advert_type,
      :advertisement => {:mail => @mail, :phone => @phone, :contact => @contact, :custom_fields => @customfields}})
   @response = JSON.parse(response)
@@ -64,7 +64,7 @@ end
 
 То %{я редактирую в объявлении следующие данные:} do |page_params|
   setfields(page_params)
-  response = HTTParty.post(API_URL + 'advertisements/advert',
+  response = HTTParty.post(API_URL + 'advertisements/' + @advertisement_id,
    :body => {:auth_token => $token,
      :advertisement => {:custom_fields => @customfields}})
   @response = JSON.parse(response)
