@@ -29,7 +29,7 @@ def setfields(page_params)
         customfieldsarray << "price" 
         customfieldsarray << [hash['value']]
       when "Валюта"
-        @price = hash['value']
+        @currency = hash['value']
         customfieldsarray << "currency" 
         customfieldsarray << [hash['value']]
       when "Год выпуска"
@@ -48,6 +48,16 @@ def setfields(page_params)
         customfieldsarray << "transmittion"
         customfieldsarray << [hash['value']]
         @transmission = hash['value']
+      when "Сдвиг"
+        @offset = hash['value']
+      when "Ограничение"
+        @limit = hash['value']
+      when "Сортировать по"
+        @sort_by = hash['value']
+      when "Включить частные"
+        @include_privates = hash['value']
+      when "Включить коммерческие"
+        @include_compannies = hash['value']
       end
   end
   @customfields = Hash[*customfieldsarray]
@@ -165,6 +175,17 @@ end
 
 То %{я понижаю рейтинг объявления} do
   response = HTTParty.delete(API_URL + 'advertisements/advert' + @advertisement_id + '/vote', :body => {:auth_token => $token})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+То %{я получаю объявления определенной категории со следующими параметрами:} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'advertisements/category',
+   :body => {:category => @category, :region => @region, :advert_type => @advert_type, :currency => @currency,
+     :offset => @offset, :limit => @limit, :sort_by => @sort_by, :include_privates => @include_privates,
+     :include_compannies => @include_compannies})
   @response = JSON.parse(response)
   puts @response
   checkforerrors(@response)
