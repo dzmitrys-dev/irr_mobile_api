@@ -183,10 +183,25 @@ end
 То %{я получаю объявления определенной категории со следующими параметрами:} do |page_params|
   setfields(page_params)
   response = HTTParty.get(API_URL + 'advertisements/category',
-   :body => {:category => @category, :region => @region, :advert_type => @advert_type, :currency => @currency,
+   :body => {:category => @category, :region => @region, :currency => @currency,
      :offset => @offset, :limit => @limit, :sort_by => @sort_by, :include_privates => @include_privates,
      :include_compannies => @include_compannies})
   @response = JSON.parse(response)
   puts @response
   checkforerrors(@response)
+  if @response['advertisements'] == nil
+    raise "Невозможно получить объявления по заданным критериям"
+  end
+end
+
+То %{я получаю популярные объявления определенной категории со следующими параметрами:} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'advertisements/popular',
+   :body => {:category => @category, :region => @region, :currency => @currency})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+  if @response['advertisements'] == nil
+    raise "Невозможно получить объявления по заданным критериям"
+  end
 end
