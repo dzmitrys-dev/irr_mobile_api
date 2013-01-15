@@ -221,3 +221,10 @@ end
     raise "Невозможно получить объявления по заданным критериям"
   end
 end
+
+То %{я получаю список своих объявлений} do
+  response = HTTParty.get(API_URL + 'advertisements/personal', :body => {:auth_token => $token})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
