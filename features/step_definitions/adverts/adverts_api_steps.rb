@@ -60,6 +60,12 @@ def setfields(page_params)
         @include_compannies = hash['value']
       when "Ключевые слова"
         @keywords = hash['value']
+      when "Строка поиска"
+        @search_string = hash['value']
+      when "Значение"
+        @value = hash['value']
+      when "Словарь"
+        @dictionary_name = hash['value']
       end
   end
   @customfields = Hash[*customfieldsarray]
@@ -139,13 +145,13 @@ end
   checkforerrors(@response)
 end
 
-То %{я проверяю, что в списке избранных объявлений есть объявление с таким идентификатором} do
+То %{я проверяю, что в списке полученных объявлений есть объявление с таким идентификатором} do
   unless @response['advertisements'].has_value?(@advertisement_id)
     raise "Объявление с данным идентификатором не найдено списке избранных. Полученный ответ: " + @response
   end
 end
 
-То %{я проверяю, что в списке избранных объявлений нет объявления с таким идентификатором} do
+То %{я проверяю, что в списке полученных объявлений нет объявления с таким идентификатором} do
   if @response['advertisements'].has_value?(@advertisement_id)
     raise "Объявление с данным идентификатором присутствует списке избранных. Полученный ответ: " + @response
   end
@@ -224,6 +230,80 @@ end
 
 То %{я получаю список своих объявлений} do
   response = HTTParty.get(API_URL + 'advertisements/personal', :body => {:auth_token => $token})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+То %{я получаю список объявлений пользователя "$userid"} do |user_id|
+  response = HTTParty.get(API_URL + 'advertisements/user/', :body => {:user_id => user_id})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+То %{я получаю список подкатегорий для категории} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'categories', :body => {:category => @category})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+То %{в списке категорий должны присутствовать следующие данные:} do |page_params|
+  page_params.hashes.each do |hash|
+    @response['categories'][hash['parameter']].has_value?(hash['value'])
+  end
+end
+
+#TODO: Уточнить ожидаемый результат
+То %{я получаю список полей для редактирования} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'categories/fields/post', :body => {:category => @category, :region => @region, :advert_type => @advert_type})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат
+То %{я получаю список полей для поиска} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'categories/fields/search', :body => {:category => @category, :advert_type => @advert_type})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат
+То %{я получаю список регионов} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'regions', :body => {:region => @region})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат
+То %{я осуществляю поиск регионов со следующими параметрами:} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'regions/search', :body => {:region => @region})
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат
+То %{я получаю список валют} do
+  response = HTTParty.get(API_URL + 'currencies')
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат и входные данные
+То %{я получаю значения словаря со следующими параметрами:} do |page_params|
+  setfields(page_params)
+  response = HTTParty.get(API_URL + 'dictionary/' + @dictionary_name, :body => {:value => @value})
   @response = JSON.parse(response)
   puts @response
   checkforerrors(@response)
