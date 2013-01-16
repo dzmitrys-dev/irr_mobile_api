@@ -32,36 +32,61 @@ def get_login_and_password_for_role(role)
   end
 end
 
+#TODO: Обработать ответ
+Когда %{я регистрирую пользователя с ролью "$role" посредством API} do |role|
+  credentials = get_login_and_password_for_role(role)
+  $credentials = credentials
+  credentials['email']+=Random.rand(9999).to_s+Random.rand(9999).to_s
+  credentials['login'] = credentials['email']
+  puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
+  @response = HTTParty.post(API_URL + 'account', :body => {:email => credentials['email'], :password => credentials['password']})
+  @response = JSON.parse(@response)
+  puts @response
+  checkforerrors(@response)
+end
+
 #TODO: привести к DRY часть HTTParty.post(API_URL
 Когда %{я вхожу под пользователем с ролью "$role" посредством API} do |role|
   credentials = get_login_and_password_for_role(role)
   $credentials = credentials
   puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
-  @@response = HTTParty.post(API_URL + 'account/login', :body => {:username => credentials['login'], :password => credentials['password']})
-  @@response = JSON.parse(@@response)
-  puts @@response
+  @response = HTTParty.post(API_URL + 'account/login', :body => {:username => credentials['login'], :password => credentials['password']})
+  @response = JSON.parse(@response)
+  puts @response
+  checkforerrors(@response)
+end
+
+#TODO: Уточнить ожидаемый результат
+Когда %{я восстанавливаю пароль пользователя с ролью "$role" посредством API} do |role|
+  credentials = get_login_and_password_for_role(role)
+  $credentials = credentials
+  puts "DEBUG: Логин: #{credentials['login']}, пароль '#{credentials['password']}'"
+  @response = HTTParty.post(API_URL + 'account/login', :body => {:email => credentials['email']})
+  @response = JSON.parse(@response)
+  puts @response
+  checkforerrors(@response)
 end
 
 То %{я запоминаю авторизационный токен} do 
-  $token = @@response['auth_token']
+  $token = @response['auth_token']
   puts "Авторизационный токен: " + $token
 end
 
 То %{в ответе должно быть указано имя пользователя} do 
-  unless @@response['user_info'].has_value?($credentials['login']);
+  unless @response['user_info'].has_value?($credentials['login']);
     raise "Невозможно получить данные пользователя роли " + role + " DEBUG: "
-    puts @@response
+    puts @response
   end
 end
 
 То %{в ответе отображен статус интернет-партнера} do 
-  unless @@response['is_partner'] = true
+  unless @response['is_partner'] = true
     raise "Данный пользователь не является интернет-партнером"
   end
 end
 
 То %{в ответе отображен статус обычного пользователя} do 
-  unless @@response['is_partner'] = true
+  unless @response['is_partner'] = true
     raise "Данный пользователь не является обычным пользователем"
   end
 end
