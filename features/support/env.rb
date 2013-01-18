@@ -39,6 +39,7 @@ require 'diffy'
 require 'base64'
 require 'httparty'
 require 'json'
+require 'rest_client'
 
 
 $: << File.dirname(__FILE__)+'/../../lib'
