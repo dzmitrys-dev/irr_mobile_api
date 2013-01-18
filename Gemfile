@@ -18,3 +18,4 @@ gem 'diffy'
 gem "httparty"
 gem "multi_json"
 gem 'json'
+gem 'rest-client'

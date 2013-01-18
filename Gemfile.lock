@@ -33,6 +33,7 @@ GEM
     libwebsocket (0.1.7.1)
       addressable
       websocket
+    mime-types (1.19)
     multi_json (1.5.0)
     multi_xml (0.5.1)
     net-http-persistent (2.8)
@@ -44,6 +45,8 @@ GEM
       selenium-webdriver (>= 2.27.2)
       watir-webdriver (>= 0.6.2)
     rake (10.0.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -84,6 +87,7 @@ DEPENDENCIES
   nokogiri
   page-object
   rake
+  rest-client
   rspec
   unicode_utils
   watir-webdriver
