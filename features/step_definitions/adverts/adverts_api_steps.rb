@@ -252,7 +252,7 @@ end
 
 То %{в списке категорий должны присутствовать следующие данные:} do |page_params|
   page_params.hashes.each do |hash|
-    @response['categories'][hash['parameter']].has_value?(hash['value'])
+  @response['categories'][2][hash['parameter']].has_value?(hash['value'])
   end
 end
 
