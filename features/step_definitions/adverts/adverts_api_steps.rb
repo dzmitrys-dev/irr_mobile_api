@@ -252,8 +252,8 @@ end
 
 То %{в списке категорий должны присутствовать следующие данные:} do |page_params|
   page_params.hashes.each do |hash|
-    unless @response['categories'][2][hash['parameter']] == hash['value']
-    raise @response['categories'][2][hash['parameter']] + " Не соответствует значению" + hash['value']
+    unless @response['categories'][1][hash['parameter']] == hash['value']
+    raise @response['categories'][1][hash['parameter']] + " Не соответствует значению " + hash['value']
     end
   end
 end
