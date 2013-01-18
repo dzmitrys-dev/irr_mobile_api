@@ -7,8 +7,8 @@ ENABLE_FLASH = ENV['FLASH'] || false
 FAIL_FAST = ENV['FAILFAST'] || false
 
 #TODO:Вынести методы в APIHelper. Сделать метод отправки запроса
-#Глобальные методы
 
+#Глобальные методы
 def checkforerrors(response)
   if response['error'] != nil
     raise response['error']['description'] + response.to_s
