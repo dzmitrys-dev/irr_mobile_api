@@ -292,12 +292,25 @@ end
   checkforerrors(@response)
 end
 
-#TODO: Уточнить ожидаемый результат
 То %{я получаю список валют} do
   response = HTTParty.get(API_URL + 'currencies')
   @response = JSON.parse(response)
   puts @response
   checkforerrors(@response)
+end
+
+То %{список валют должен содержать следующие данные:} do |page_params|
+  response = HTTParty.get(API_URL + 'currencies')
+  @response = JSON.parse(response)
+  puts @response
+  checkforerrors(@response)
+  currencies = Hash.new
+  page_params.hashes.each do |hash|
+    currencies[hash['parameter']] = hash['value']
+  end
+  unless @response['currencies'] == currencies
+    raise "Список валют отличается от заданного. Полученный список: " + @response.to_s
+  end
 end
 
 #TODO: Уточнить ожидаемый результат и входные данные
